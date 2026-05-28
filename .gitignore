@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+.pnpm-debug.log*
+
+# Build output
+dist/
+lib/
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Testing / Tools
+coverage/
+.vite/
+*.log

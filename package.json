@@ -1,0 +1,51 @@
+{
+  "name": "@nyanxx/sui",
+  "version": "0.0.0",
+  "description": "Add UI components to your project",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "@nyanxx/sui": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "fs-extra": "^11.3.5"
+  },
+  "keywords": [
+    "ui-cli",
+    "sui"
+  ],
+  "author": "Nayan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyanxx/sui"
+  },
+  "bugs": {
+    "url": "https://github.com/nyanxx/sui/issues"
+  },
+  "homepage": "https://github.com/nyanxx/sui#readme",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^25.9.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.0",
+    "vitest": "^4.1.7"
+  }
+}
