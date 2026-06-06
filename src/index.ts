@@ -14,7 +14,11 @@ program
   .command("add <category> [names...]")
   .description("Add components or sections to your project")
   .action(async (category: string, names: string[]) => {
-    if (!["components", "sections"].includes(category)) {
+    if (
+      !["components", "sections", "pages", "pets", "hooks", "utils"].includes(
+        category,
+      )
+    ) {
       console.log(chalk.red(`✖ Unknown category: "${category}"`));
       console.log(chalk.dim("  Available: components, sections"));
       process.exit(1);
