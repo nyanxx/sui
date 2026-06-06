@@ -51,17 +51,19 @@ program
 
       // group by group field
       const groups: Record<string, string[]> = {};
-      for (const [name, item] of Object.entries(items)) {
+      for (const item of Object.values(items)) {
         const g = item.group ?? "other";
         if (!groups[g]) groups[g] = [];
-        groups[g].push(name);
+        groups[g].push(item.name);
       }
 
-      for (const [group, names] of Object.entries(groups)) {
+      for (const [group, itemNames] of Object.entries(groups)) {
         console.log(chalk.dim(`  ${group}`));
-        for (const name of names) {
+        for (const itemName of itemNames) {
+          // Find the original item to get the description
+          const item = Object.values(items).find(i => i.name === itemName);
           console.log(
-            `    ${chalk.cyan(name)}  ${chalk.dim(items[name].description)}`,
+            `    ${chalk.cyan(itemName)}  ${chalk.dim(item?.description ?? "")}`,
           );
         }
       }
