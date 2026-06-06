@@ -16,3 +16,7 @@ Thumbs.db
 coverage/
 .vite/
 *.log
+
+.changeset/
+!.changeset/config.json
+!.changeset/README.md
